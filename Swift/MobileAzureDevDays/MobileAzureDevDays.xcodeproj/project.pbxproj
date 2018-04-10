@@ -63,6 +63,7 @@
 		B576FD131F75A8CE007E2415 /* Sentiment.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Sentiment.swift; sourceTree = "<group>"; };
 		B576FD151F75ABDB007E2415 /* SentimentClient.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SentimentClient.swift; sourceTree = "<group>"; };
 		B576FD171F76B01F007E2415 /* SentimentResponse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SentimentResponse.swift; sourceTree = "<group>"; };
+		BED12E09207D7ACF00B8999F /* MobileAzureDevDays.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = MobileAzureDevDays.entitlements; sourceTree = "<group>"; };
 		BF39F20320350D0B0075D537 /* SentimentPage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SentimentPage.swift; sourceTree = "<group>"; };
 		BF3D8C39203502330077141D /* AppCenterXCUITestExtensions.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; path = AppCenterXCUITestExtensions.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		CBEFCE411F8C3F73009A16BF /* SentimentKeyResponse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SentimentKeyResponse.swift; sourceTree = "<group>"; };
@@ -132,6 +133,7 @@
 		B576FD001F75987E007E2415 /* MobileAzureDevDays */ = {
 			isa = PBXGroup;
 			children = (
+				BED12E09207D7ACF00B8999F /* MobileAzureDevDays.entitlements */,
 				B576FD011F75987E007E2415 /* AppDelegate.swift */,
 				B576FD031F75987E007E2415 /* ViewController.swift */,
 				B576FD051F75987E007E2415 /* Main.storyboard */,
@@ -236,6 +238,11 @@
 					B576FCFD1F75987E007E2415 = {
 						CreatedOnToolsVersion = 9.0;
 						ProvisioningStyle = Manual;
+						SystemCapabilities = {
+							com.apple.Push = {
+								enabled = 1;
+							};
+						};
 					};
 				};
 			};
@@ -592,6 +599,7 @@
 			baseConfigurationReference = 9500822D30F1BD04C2746828 /* Pods-MobileAzureDevDays.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_ENTITLEMENTS = MobileAzureDevDays/MobileAzureDevDays.entitlements;
 				CODE_SIGN_IDENTITY = "iPhone Developer";
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				CODE_SIGN_STYLE = Manual;
@@ -613,6 +621,7 @@
 			baseConfigurationReference = AD8ACE6ECC90AA03BB0C7C26 /* Pods-MobileAzureDevDays.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_ENTITLEMENTS = MobileAzureDevDays/MobileAzureDevDays.entitlements;
 				CODE_SIGN_IDENTITY = "iPhone Developer";
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				CODE_SIGN_STYLE = Manual;
