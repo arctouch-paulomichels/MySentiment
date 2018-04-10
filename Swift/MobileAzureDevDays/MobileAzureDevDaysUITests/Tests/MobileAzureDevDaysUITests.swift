@@ -34,45 +34,56 @@ class MobileAzureDevDaysUITests: XCTestCase {
         
     }
     
+    func test_SentimentPage_ValidateEmptyText_ResultShouldBeErrorMessage() {
+        //Act
+        sentimentPage.enterText(text: "")
+        sentimentPage.tapSubmitButton()
+        
+        //Assert
+        let result = sentimentPage.getDialogTitle()
+        XCTAssertTrue(result == "Hold up")
+        ACTLabel.labelStep("Correct Validating Error Presented")
+    }
+    
     func test_SentimentPage_SubmitHappyText_ResultShouldBeHappyEmoji() {
         //Arrange
         let happyText = "Happy"
-        
+
         //Act
         sentimentPage.enterText(text: happyText)
         sentimentPage.tapSubmitButton()
         sentimentPage.waitForNoActivityIndicator(timeout: 10)
-        
+
         //Assert
         let result = sentimentPage.getResults()
         XCTAssertTrue(result == "😃")
         ACTLabel.labelStep("Correct Result Present")
     }
-    
+
     func test_SentimentPage_SubmitSadText_ResultShouldBeSadEmoji() {
         //Arrange
         let sadText = "Sad"
-        
+
         //Act
         sentimentPage.enterText(text: sadText)
         sentimentPage.tapSubmitButton()
         sentimentPage.waitForNoActivityIndicator(timeout: 10)
-        
+
         //Assert
         let result = sentimentPage.getResults()
         XCTAssertTrue(result == "☹️")
         ACTLabel.labelStep("Correct Result Present")
     }
-    
+
     func test_SentimentPage_SubmitSadText_ResultShouldBeNeutralEmoji() {
         //Arrange
         let neutralText = "Mitigations in Seattle"
-        
+
         //Act
         sentimentPage.enterText(text: neutralText)
         sentimentPage.tapSubmitButton()
         sentimentPage.waitForNoActivityIndicator(timeout: 10)
-        
+
         //Assert
         let result = sentimentPage.getResults()
         XCTAssertTrue(result == "😐")

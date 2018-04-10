@@ -15,8 +15,10 @@ class SentimentPage{
     var submitButton: XCUIElement
     var resultsLabel: XCUIElement
     var activityIndicator: XCUIElement
+    var uiApp: XCUIApplication
     
     init(app: XCUIApplication) {
+        uiApp = app;
         textView = app.textViews.element(boundBy: 0)
         submitButton = app.buttons["Submit"]
         resultsLabel = app.staticTexts.element(matching: .any, identifier: "EmojiLabel")
@@ -39,6 +41,11 @@ class SentimentPage{
     public func getResults() -> String{
         let labelText = resultsLabel.label
         return labelText
+    }
+    
+    public func getDialogTitle() -> String {
+        let alertTitle = uiApp.alerts.element.label
+        return alertTitle
     }
     
     public func waitForActivityIndicator(timeout: TimeInterval){
