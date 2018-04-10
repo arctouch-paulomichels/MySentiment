@@ -7,11 +7,11 @@ target 'MobileAzureDevDays' do
 
   # Pods for MobileAzureDevDays
   pod 'AppCenter/Push'
-  pod 'AppCenterXCUITestExtensions'
 
   target 'MobileAzureDevDaysUITests' do
     inherit! :search_paths
-    # Pods for testing
+
+    pod 'AppCenterXCUITestExtensions'
   end
 
 end
