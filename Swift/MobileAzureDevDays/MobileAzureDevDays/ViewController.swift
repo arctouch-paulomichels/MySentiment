@@ -100,7 +100,7 @@ class ViewController: UIViewController, UITextViewDelegate {
                                       style: UIAlertActionStyle.destructive,
                                       handler: { _ in alert.dismiss(animated: true, completion: nil)
                                         // generate test crash
-                                        fatalError()
+                                        [0][1]
         }))
         
         present(alert, animated: true, completion: nil)
