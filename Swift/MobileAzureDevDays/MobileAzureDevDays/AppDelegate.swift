@@ -9,6 +9,8 @@
 import UIKit
 import AppCenter
 import AppCenterPush
+import AppCenterAnalytics
+import AppCenterCrashes
 
 @UIApplicationMain
 class AppDelegate: UIResponder, UIApplicationDelegate {
@@ -18,7 +20,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
 
 	func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplicationLaunchOptionsKey: Any]?) -> Bool {
         
-        MSAppCenter.start("{3b84161e-a42e-422f-ae1d-2ffcc23565a2}", withServices: [MSPush.self])
+        MSAppCenter.start("3b84161e-a42e-422f-ae1d-2ffcc23565a2", withServices: [MSPush.self, MSAnalytics.self,                                                                       MSCrashes.self])
         
         SentimentClient.shared.apiKey = ""
 		return true
